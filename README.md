@@ -4,7 +4,7 @@
 
 - Used the Volley library to make network requests from Reddit API.
 
-- Used the Glide image loader library for loading/displaying images from image URL, while also taking care of caching.
+- Used the Glide library for loading/displaying image from the URL, while also taking care of caching.
 
 - Implemented Share Action by explicitly showing a chooser dialog.
 
