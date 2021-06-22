@@ -10,27 +10,29 @@
         android:id="@+id/memeIv"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/black"
+        android:contentDescription="@null"
         app:layout_constraintBottom_toTopOf="@id/shareBtn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        android:background="@color/black"
-        android:contentDescription="@null" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/memeIv"
+        app:layout_constraintBottom_toBottomOf="@id/memeIv"
         app:layout_constraintEnd_toEndOf="@id/memeIv"
-        app:layout_constraintTop_toTopOf="@id/memeIv"
-        app:layout_constraintBottom_toBottomOf="@id/memeIv"/>
+        app:layout_constraintStart_toStartOf="@id/memeIv"
+        app:layout_constraintTop_toTopOf="@id/memeIv" />
 
     <Button
         android:id="@+id/shareBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="@color/shareBtnColor"
         android:onClick="shareMeme"
         android:padding="16dp"
@@ -38,22 +40,20 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="@id/guideline2"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp" />
+        app:layout_constraintRight_toRightOf="@id/guideline2" />
 
     <Button
         android:id="@+id/nextBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/nextBtnColor"
+        android:onClick="nextMeme"
         android:padding="16dp"
         android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="@id/guideline2"
-        android:onClick="NextMeme"
         android:textColor="@color/white"
-        android:background="@color/nextBtnColor"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/guideline2"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

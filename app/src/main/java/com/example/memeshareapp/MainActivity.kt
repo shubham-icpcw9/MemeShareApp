@@ -16,7 +16,7 @@ import com.bumptech.glide.request.target.Target
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var currImgUrl : String
+    private lateinit var currImgUrl: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         loadMeme()
     }
 
-    private fun loadMeme(){
+    private fun loadMeme() {
         // Instantiate the RequestQueue.
         //val queue = Volley.newRequestQueue(this)
         progressBar.visibility = View.VISIBLE
@@ -40,30 +40,30 @@ class MainActivity : AppCompatActivity() {
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
             { response ->
-                 currImgUrl = response.getString("url")
-                 Glide.with(this).load(currImgUrl).listener(object : RequestListener<Drawable> {
-                     override fun onLoadFailed(
-                         e: GlideException?,
-                         model: Any?,
-                         target: Target<Drawable>?,
-                         isFirstResource: Boolean
-                     ): Boolean {
-                         progressBar.visibility = View.GONE
-                         return false
-                     }
+                currImgUrl = response.getString("url")
+                Glide.with(this).load(currImgUrl).listener(object : RequestListener<Drawable> {
+                    override fun onLoadFailed(
+                        e: GlideException?,
+                        model: Any?,
+                        target: Target<Drawable>?,
+                        isFirstResource: Boolean
+                    ): Boolean {
+                        progressBar.visibility = View.GONE
+                        return false
+                    }
 
-                     override fun onResourceReady(
-                         resource: Drawable?,
-                         model: Any?,
-                         target: Target<Drawable>?,
-                         dataSource: DataSource?,
-                         isFirstResource: Boolean
-                     ): Boolean {
-                         progressBar.visibility = View.GONE
-                         return false
-                     }
-                 }).into(memeIv)
-             },
+                    override fun onResourceReady(
+                        resource: Drawable?,
+                        model: Any?,
+                        target: Target<Drawable>?,
+                        dataSource: DataSource?,
+                        isFirstResource: Boolean
+                    ): Boolean {
+                        progressBar.visibility = View.GONE
+                        return false
+                    }
+                }).into(memeIv)
+            },
             { Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show() })
 
         // Add the request to the RequestQueue.
@@ -71,6 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
     }
+
     fun shareMeme(view: View) {
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
@@ -79,6 +80,7 @@ class MainActivity : AppCompatActivity() {
         val chooser = Intent.createChooser(intent, "Share this meme using")
         startActivity(chooser)
     }
+
     fun nextMeme(view: View) {
         loadMeme()
     }
