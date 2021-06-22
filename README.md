@@ -1,4 +1,5 @@
-MemeShareApp
+# MemeShareApp
+
 • Built an android application which let's you share memes among your friends.
 
 • Used the Volley library to make network requests from reddit API.
