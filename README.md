@@ -1,6 +1,6 @@
 # MemeShareApp
 
-! [MemeShareApp] (C:\Users\Patwarika\Desktop\MemeShareApp1.jpeg)
+![MemeShareApp](C:\Users\Patwarika\Desktop\MemeShareApp1.jpeg)
 - Built an android application that lets you share memes among your friends.
 
 - Used the Volley library to make network requests from Reddit API.
